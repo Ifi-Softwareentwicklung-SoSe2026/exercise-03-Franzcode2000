@@ -1,3 +1,4 @@
+namespace green_interfaces;
 using System;
 
 public class AppleTree : Plants, ICookable, IWoodProducer

@@ -14,3 +14,4 @@ public abstract class Plants
         return $"{Name}, {Age} Jahre alt";
     }
 }
+
