@@ -1,17 +1,23 @@
-namespace green_interfaces;
 using System;
-
-public class AppleTree : Plants, ICookable, IWoodProducer
+namespace green_interfaces
 {
-    public AppleTree(string name, int age) : base(name, age) { }
-
-    public void Cook()
+    public class AppleTree : Plants, ICookable, IWoodProducer
     {
-        Console.WriteLine($"{Name} liefert Äpfel – daraus wird Apfelmus gekocht.");
-    }
+        public AppleTree(string name, int ageInYears) : base(name, ageInYears) { }
 
-    public void ProduceWood()
-    {
-        Console.WriteLine($"{Name} produziert Holz für Möbel.");
+        public override string GetDescription()
+        {
+            return $"{Name} ist ein Apfelbaum, {Age} Jahre alt.";
+        }
+
+        public string GetCookingSuggestion()
+        {
+            return "Äpfel eignen sich für Apfelmus und Kuchen.";
+        }
+
+        public string GetWoodUsage()
+        {
+            return "Das Holz wird für Möbel genutzt.";
+        }
     }
 }

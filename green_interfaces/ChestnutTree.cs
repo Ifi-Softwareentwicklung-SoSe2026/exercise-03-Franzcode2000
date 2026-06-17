@@ -1,12 +1,18 @@
-namespace green_interfaces;
 using System;
-
-public class ChestnutTree : Plants, IWoodProducer
+namespace green_interfaces
 {
-    public ChestnutTree(string name, int age) : base(name, age) { }
-
-    public void ProduceWood()
+    public class ChestnutTree : Plants, IWoodProducer
     {
-        Console.WriteLine($"{Name} liefert wertvolles Kastanienholz.");
+        public ChestnutTree(string name, int ageInYears) : base(name, ageInYears) { }
+
+        public override string GetDescription()
+        {
+            return $"{Name} ist eine Edelkastanie, {Age} Jahre alt.";
+        }
+
+        public string GetWoodUsage()
+        {
+            return "Kastanienholz ist wetterfest – ideal für Zäune.";
+        }
     }
 }

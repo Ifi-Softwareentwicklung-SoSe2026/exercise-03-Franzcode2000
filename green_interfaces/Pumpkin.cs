@@ -1,12 +1,18 @@
-namespace green_interfaces;
 using System;
-
-public class Pumpkin : Plants, ICookable
+namespace green_interfaces
 {
-    public Pumpkin(string name, int age) : base(name, age) { }
-
-    public void Cook()
+    public class Pumpkin : Plants, ICookable
     {
-        Console.WriteLine($"{Name} wird zu Kürbissuppe verarbeitet.");
+        public Pumpkin(string name, int ageInYears) : base(name, ageInYears) { }
+
+        public override string GetDescription()
+        {
+            return $"{Name} ist ein Kürbis, {Age} Jahr(e) alt.";
+        }
+
+        public string GetCookingSuggestion()
+        {
+            return "Perfekt für Kürbissuppe oder Ofengemüse.";
+        }
     }
 }

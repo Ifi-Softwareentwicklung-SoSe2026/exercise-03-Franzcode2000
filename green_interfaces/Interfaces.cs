@@ -1,10 +1,12 @@
-namespace green_interfaces;
-public interface ICookable
+namespace green_interfaces
 {
-    void Cook();
-}
+    public interface ICookable
+    {
+        string GetCookingSuggestion();
+    }
 
-public interface IWoodProducer
-{
-    void ProduceWood();
+    public interface IWoodProducer
+    {
+        string GetWoodUsage();
+    }
 }

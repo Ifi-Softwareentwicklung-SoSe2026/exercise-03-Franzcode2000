@@ -1,17 +1,16 @@
-public abstract class Plants
+namespace green_interfaces
 {
-    public string Name { get; set; }
-    public int Age { get; set; }
-
-    protected Plants(string name, int age)
+    public abstract class Plants
     {
-        Name = name;
-        Age = age;
-    }
+        public string Name { get; set; }
+        public int Age { get; set; }
 
-    public virtual string GetInfo()
-    {
-        return $"{Name}, {Age} Jahre alt";
+        protected Plants(string name, int ageInYears)
+        {
+            Name = name;
+            Age = ageInYears;
+        }
+
+        public abstract string GetDescription();
     }
 }
-
